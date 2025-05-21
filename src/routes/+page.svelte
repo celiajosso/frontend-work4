@@ -1,7 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import TabSection from "./components/TabSection.svelte";
-
+  import TabSection from "$lib/components/TabSection.svelte";
   let todos = [];
   let formData = { text: "" };
   let cos = "";
@@ -46,11 +45,6 @@
     currentTab = tab;
   }
 </script>
-
-<link
-  rel="stylesheet"
-  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-/>
 
 <div class="container">
   <!-- HEADER AND TODO COUNT -->
@@ -135,9 +129,3 @@
     {/if}
   </div>
 </div>
-
-<style>
-  .text-decoration-line-through {
-    text-decoration: line-through;
-  }
-</style>

@@ -23,7 +23,7 @@ app.set("port", process.env.PORT || port);
 app.use(methodOverride());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public"))); // set the static files location /public/img will be /img for users
+app.use(express.static(path.join(__dirname, "../build"))); // set the static files location ../build/img will be /img for users
 
 // define model ================================================================
 var Todo = mongoose.model("Todo", {
@@ -120,8 +120,8 @@ app.delete("/api/todos/:todo_id", function (req, res) {
 });
 
 // application -------------------------------------------------------------
-app.get("*", function (req, res) {
-  res.sendFile("./public/index.html", { root: __dirname });
+app.get("/*", function (req, res) {
+  res.sendFile(path.resolve(__dirname, "../build/index.html"));
 });
 
 // listen (start app with node server.js) ======================================
