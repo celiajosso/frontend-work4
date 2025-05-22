@@ -1,5 +1,12 @@
 # sv
 
+## Commands to set up
+
+Terminal 1 : cd server + npm run build
+Terminal 2 : cd server + node server.js
+
+## other
+
 Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
 
 ## Creating a project
