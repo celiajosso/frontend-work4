@@ -7,13 +7,13 @@
   let currentTab = "all";
 
   onMount(async () => {
-    const res = await fetch("/api/todos");
+    const res = await fetch("http://localhost:4000/api/todos");
     todos = await res.json();
   });
 
   async function createTodo(event) {
     event.preventDefault();
-    const res = await fetch("/api/todos", {
+    const res = await fetch("http://localhost:4000/api/todos", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
@@ -25,7 +25,7 @@
   async function updateTodo(id) {
     const todo = todos.find((t) => t._id === id);
     todo.done = !todo.done;
-    const res = await fetch(`/api/todos/${id}`, {
+    const res = await fetch(`http://localhost:4000/api/todos/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ done: todo.done }),
@@ -34,7 +34,9 @@
   }
 
   async function deleteTodo(id) {
-    const res = await fetch(`/api/todos/${id}`, { method: "DELETE" });
+    const res = await fetch(`http://localhost:4000/api/todos/${id}`, {
+      method: "DELETE",
+    });
     todos = await res.json();
   }
 
