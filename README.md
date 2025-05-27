@@ -1,4 +1,4 @@
-# Frontend Work 4:Todo Svelte App
+# Frontend Work 4: Svelte Todo App
 
 ## Commands
 
@@ -20,3 +20,7 @@ npm run dev
 ## Navigation
 
 Go to `localhost:5173`
+
+## Warning
+
+Do not run if you are in the eduroam WiFi network! It won't work
